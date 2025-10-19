@@ -1,9 +1,16 @@
-
+import { useNavigate } from "react-router-dom";
 import { MoreVertical } from "lucide-react";
 import logo from "../assets/logo.png";
 import balaklon from "../assets/brand.png";
 
 function Header() {
+  const navigate = useNavigate();
+  
+  //return to Home
+  const returnHome = () => {
+  navigate("/");
+  }
+
   return (
      <header className="w-full flex items-center justify-between bg-white shadow-md px-4 py-3 sticky top-0 z-50 ">
       {/* Insert Logo */}
@@ -12,12 +19,13 @@ function Header() {
           src={logo}
           alt="Logo"
           className="h-25 w-25 bg-white"
+          onClick={returnHome}
         />
 
         <img
           src={balaklon}
           alt="balaklon"
-          className="h-15 w-40 bg-white md:w-60 md:h-25"
+          className="h-10 w-30 bg-white md:w-40 md:h-20"
         />
       </div>
 

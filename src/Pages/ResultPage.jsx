@@ -1,0 +1,86 @@
+import Header from '@/Components/Header'
+import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import React from 'react'
+import { useNavigate } from "react-router-dom";
+
+export default function ResultPage() {
+  const [items, setItems] = useState([]);
+   const navigate = useNavigate();
+
+   useEffect(() => {
+
+    document.title = "Balaklon-Grocery-List";
+
+    //Get Items to display in the page. 
+    const storedData = JSON.parse(localStorage.getItem("selectedItems")) || [];
+    setItems(storedData);
+  }, []);
+
+ //Catch changes in the status of every checkbox created
+ const handleCheckboxChange = (index) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === index ? { ...item, checked: !item.checked } : item
+      )
+    );
+  };
+    //Return to Home
+    const returnHome = () => {
+            navigate("/");
+            localStorage.removeItem("selectedItems");
+    }
+
+  return (
+    <>
+    <Header/>
+    <div className='container mx-auto px-15 py-6 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12'>
+      <h1 className="mb-10 text-center font-semibold text-2xl md:text-3xl">
+        Optimized Grocery List   
+    </h1>
+       <ul className="space-y-3">
+        {items.map((item, index) => (
+          <li
+            key={item.id || index}
+            className="bg-gray-100 px-6 py-3 rounded-lg shadow-sm w-5/8 text-center flex gap-6 lg:w-5/8 mx-auto mt-2 md:w-2/3"
+          >
+
+            
+             <div className="flex items-center space-x-3">
+              <input
+                type="checkbox"
+                checked={item.checked || false}
+                onChange={() => handleCheckboxChange(item.id)}
+                className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+             </div>
+                <p
+                  className={`font-semibold text-gray-800 ${
+                    item.checked ? "line-through text-red-400" : ""
+                  }`}
+                >
+                  {item.name}
+                </p>
+                <p
+                  className={`text-gray-500 text-md ${
+                    item.checked ? "line-through text-red-500" : ""
+                  }`}
+                >
+                    ₱{item.price}
+                </p>
+          </li>
+        ))}
+      </ul>
+         <div className='mt-10'>
+            <Button
+                className="lg:w-5/8 flex py-8 mx-auto mt-2 md:w-2/3 bg-gray-200 text-black hover:bg-green-300"
+            >Download</Button>
+            <Button
+                onClick={returnHome}
+                className="lg:w-5/8 flex py-8 mx-auto mt-2 md:w-2/3 bg-green-900 text-white hover:bg-green-300 hover:text-black"
+            >New List</Button>
+         </div>
+    </div>
+    </>
+  );
+}

@@ -1,8 +1,11 @@
 import { Button } from '@/components/ui/button'
+import { useNavigate } from "react-router-dom";
 import React from 'react'
 
 function GenerateBtn({setSelectedItems, selectedItems}) {
   
+  const navigate = useNavigate();
+
   //Generate the optimized grocery list and display the list
   const handleGenerateTextFile = () => {
 
@@ -10,7 +13,14 @@ function GenerateBtn({setSelectedItems, selectedItems}) {
   if (!selectedItems || selectedItems.length === 0) {
     alert("Basket is empty!");
     return;
-  }}
+  }
+
+  //temporary since API is not ready.
+  localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+
+  //Goes to Loading page while waiting for the calculated result.
+   navigate("/loading");
+  }
 
 
   return (

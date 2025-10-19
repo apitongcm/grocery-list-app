@@ -1,17 +1,23 @@
 
 import './App.css'
-import Header from './Components/Header'
-import Mainsection from './Components/Mainsection'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ResultPage from './Pages/ResultPage'
+import Home from './Pages/Home'
+import LoadingCart from './Pages/LoadingCart'
+
 
 
 function App() {
 
 
-  return (
-    <>
-     <Header/>
-     <Mainsection/>
-    </>
+ return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/loading" element={<LoadingCart/>} />
+        <Route path="/result" element={<ResultPage />} />
+      </Routes>
+    </Router>
   )
 }
 
