@@ -8,19 +8,29 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import React from 'react'
+//import { useEffect} from "react";
 
-function ItemCard({id,handleDeleteCard,item_name,item_price}) {
+function ItemCard({index,handleDrop,draggedIndexRef,handleDeleteCard,item}) {
+
+     // const handleDragStart = (index) => {setDraggedIndex(index)}; 
+      const handleDragStart = (index) => {draggedIndexRef.current = index;};
+      const handleDragOver = (e) => e.preventDefault(); // Allow drop
 
 
   return (
-   <div className="mt-5"> 
-        <Card>
+    
+        <Card className="mt-10 cursor-grab active:cursor-grabbing hover:shadow-lg transition"
+        draggable
+        onDragStart={() => handleDragStart(index)}
+        onDragOver={handleDragOver}
+        onDrop={() => handleDrop(index)}
+        >
             <CardHeader>
-                <CardTitle className="text-xl md:text-md">{item_name}</CardTitle>
-                <CardDescription className="text-xl md:text-md">₱ {item_price.toLocaleString()}</CardDescription>
+                <CardTitle className="text-xl md:text-md">{item.name}</CardTitle>
+                <CardDescription className="text-xl md:text-md">₱ {item.price.toLocaleString()}</CardDescription>
                 <CardAction>
                     <Button 
-                      onClick={() => handleDeleteCard(id)}
+                      onClick={() => handleDeleteCard(index)}
                       className="bg-red-500 hover:bg-green-500">
                       <Trash2 size={20} />
                     </Button>
@@ -28,7 +38,6 @@ function ItemCard({id,handleDeleteCard,item_name,item_price}) {
                 </CardAction>
             </CardHeader>
         </Card>
-   </div>
   )
 }
 

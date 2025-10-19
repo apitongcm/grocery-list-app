@@ -23,6 +23,7 @@ function InputItem() {
     const [query, setQuery] = useState("");
     const [firstMatch, setFirstMatch] = useState(null);
     const [selectedItems, setSelectedItems] = useState([]);
+    const [priority, setPriority] = useState(0);
 
     //For Validation check
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -68,16 +69,17 @@ function InputItem() {
     setSelectedItems((prev) => [...prev, 
         {
           ...firstMatch,
-          //id + prio
-          id: Date.now() + Math.random(), //to create new unique id
+          //id + prio firstMatch.id +
+          id: priority, //to create new unique id
         }]);
+    setPriority(priority + 1)
     setQuery(""); // Clear input
     setresponseFlag(false) //Return flag to false
   };
 
-    useEffect(() => {
-        console.log("Selected items changed:", selectedItems);
-    }, [selectedItems]);
+    //useEffect(() => {
+      //  console.log("Selected items changed:", selectedItems);
+    //}, [selectedItems]);
 
   return (
     <>
