@@ -69,17 +69,12 @@ function InputItem() {
     setSelectedItems((prev) => [...prev, 
         {
           ...firstMatch,
-          //id + prio firstMatch.id +
           id: priority, //to create new unique id
         }]);
     setPriority(priority + 1)
     setQuery(""); // Clear input
     setresponseFlag(false) //Return flag to false
   };
-
-    //useEffect(() => {
-      //  console.log("Selected items changed:", selectedItems);
-    //}, [selectedItems]);
 
   return (
     <>
@@ -110,8 +105,12 @@ function InputItem() {
         </button>
     </div>
               <GenerateBtn
-                  setSelectedItems={setSelectedItems}/>
+                  setSelectedItems={setSelectedItems}
+                  selectedItems={selectedItems}
+              />
+                  
 
+                {/* Pop up window */}
                <ModalWindow 
                   isDialogOpen={isDialogOpen} 
                   setIsDialogOpen={setIsDialogOpen}
@@ -120,6 +119,7 @@ function InputItem() {
                   handleAddCard={handleAddCard}
                   firstMatch={firstMatch}
                 />
+                   {/* Holds all the card(item) in your basket */}
               <ItemHolder 
                   selectedItems={selectedItems}
                   setSelectedItems={setSelectedItems}

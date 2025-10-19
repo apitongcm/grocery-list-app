@@ -8,13 +8,11 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import React from 'react'
-//import { useEffect} from "react";
 
 function ItemCard({index,handleDrop,draggedIndexRef,handleDeleteCard,item}) {
 
-     // const handleDragStart = (index) => {setDraggedIndex(index)}; 
       const handleDragStart = (index) => {draggedIndexRef.current = index;};
-      const handleDragOver = (e) => e.preventDefault(); // Allow drop
+      const handleDragOver = (e) => e.preventDefault(); // preventing reseting data to default, to maintain data from drag start.
 
 
   return (
