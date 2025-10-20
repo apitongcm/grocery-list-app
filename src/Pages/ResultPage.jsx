@@ -8,14 +8,13 @@ export default function ResultPage() {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
 
-    //Get Items to display in the page. 
-    const storedData = JSON.parse(localStorage.getItem("selectedItems")) || [];
   
    useEffect(() => {
 
     document.title = "Balaklon-Grocery-List";
 
-
+    //Get Items to display in the page. 
+    const storedData = JSON.parse(localStorage.getItem("selectedItems")) || [];
     //setItems(storedData);
 
     const withId = storedData.map((item, index) => ({
@@ -23,15 +22,15 @@ export default function ResultPage() {
       id: index + 10000,
     }));
     setItems(withId);
-  }, []);  
+  }, []); 
 
     //Download generated grocery list in .txt format
     const handleDownload = () => {
 
      // Convert array data to CSV format
-      const header = "Balaklon-Grocery-List\n\n";
+    const header = "Balaklon-Grocery-List\n\n";
     const csvHeader = "Name,Price\n";//column headers
-    const csvRows = storedData.map(item => `${item.name},${item.price}`).join("\n");
+    const csvRows = items.map(item => `${item.name},${item.price}`).join("\n");
     const content = header + csvHeader + csvRows;
 
      // Convert data format to CSV
