@@ -64,7 +64,7 @@ function ItemHolder({selectedItems, setSelectedItems}) {
   return (
     <>
       <div className='mt-25 mx-auto min-lg:w-1/2 max-md:mx-0 '>
-        <h1 className='text-center font-semibold text-2xl md:text-3xl'>Basket</h1>
+        <h1 className='text-center font-semibold text-2xl md:text-3xl'>Current Cart</h1>
               {selectedItems.map((item,index) => (
         <ItemCard
             key={item.id}
