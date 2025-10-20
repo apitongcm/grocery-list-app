@@ -9,6 +9,7 @@ function Header() {
   //return to Home
   const returnHome = () => {
   navigate("/");
+  window.location.reload();
   }
 
   return (

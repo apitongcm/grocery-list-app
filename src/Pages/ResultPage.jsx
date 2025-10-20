@@ -6,22 +6,55 @@ import { useNavigate } from "react-router-dom";
 
 export default function ResultPage() {
   const [items, setItems] = useState([]);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
+    //Get Items to display in the page. 
+    const storedData = JSON.parse(localStorage.getItem("selectedItems")) || [];
+  
    useEffect(() => {
 
     document.title = "Balaklon-Grocery-List";
 
-    //Get Items to display in the page. 
-    const storedData = JSON.parse(localStorage.getItem("selectedItems")) || [];
-    setItems(storedData);
-  }, []);
+
+    //setItems(storedData);
+
+    const withId = storedData.map((item, index) => ({
+      ...item,
+      id: index + 10000,
+    }));
+    setItems(withId);
+  }, []);  
+
+    //Download generated grocery list in .txt format
+    const handleDownload = () => {
+
+     // Convert array data to CSV format
+      const header = "Balaklon-Grocery-List\n\n";
+    const csvHeader = "Name,Price\n";//column headers
+    const csvRows = storedData.map(item => `${item.name},${item.price}`).join("\n");
+    const content = header + csvHeader + csvRows;
+
+     // Convert data format to CSV
+     const blob = new Blob([content], { type: "text/csv" });
+
+      // temporary url to place data
+      const url = URL.createObjectURL(blob);
+
+      // headless manuever and processing to perform/trigger download
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Balaklon-Grocery-List_result.csv"
+      a.click();
+
+      // since the data is downloaded revoke the temporary URL.
+      URL.revokeObjectURL(url);
+    };
 
  //Catch changes in the status of every checkbox created
- const handleCheckboxChange = (index) => {
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === index ? { ...item, checked: !item.checked } : item
+ const handleCheckboxChange = (result_id) => {
+    setItems((withId) =>
+      withId.map((item) =>
+        item.id === result_id? { ...item, checked: !item.checked } : item
       )
     );
   };
@@ -29,6 +62,7 @@ export default function ResultPage() {
     const returnHome = () => {
             navigate("/");
             localStorage.removeItem("selectedItems");
+            window.location.reload();
     }
 
   return (
@@ -73,6 +107,7 @@ export default function ResultPage() {
       </ul>
          <div className='mt-10'>
             <Button
+                onClick={handleDownload}
                 className="lg:w-5/8 flex py-8 mx-auto mt-2 md:w-2/3 bg-gray-200 text-black hover:bg-green-300"
             >Download</Button>
             <Button
