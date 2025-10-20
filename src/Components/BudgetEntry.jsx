@@ -16,16 +16,9 @@ function BudgetEntry() {
         value={budget}
         onChange={(e) => setBudget(e.target.value)}
         placeholder="Enter your Budget"
-        className="block w-full pl-5 pr-4 border border-gray-300  text-gray-400  focus:text-black focus:outline-none py-8"
+        className="block w-full pl-5 pr-4 border border-gray-300  text-gray-500  focus:text-black focus:outline-none py-8 text-5xl"
         />
         
-        {/* Update budget */}
-        <button 
-        className="relative px-4  bg-gray-200 flex items-center hover:bg-green-300 focus:outline-none py-8"
-        aria-label="Search"
-        > 
-          Update
-        </button>
         </div>
     </>
     

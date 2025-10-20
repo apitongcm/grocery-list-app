@@ -93,7 +93,7 @@ function InputItem() {
                     handleSearch();
               }}}
         placeholder="Enter an Item"
-        className="block w-full pl-5 pr-4 py-2 border border-gray-300  text-gray-400  focus:text-black focus:outline-none"
+        className="block w-full pl-5 pr-4 py-2 border border-gray-300  text-gray-500  focus:text-black focus:outline-none text-3xl"
         />
         
         {/* Search Icon */}

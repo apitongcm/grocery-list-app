@@ -13,7 +13,8 @@ function ItemHolder({selectedItems, setSelectedItems}) {
   const handleDeleteCard = (index) => {
   setSelectedItems((prev) => {
     //Remove the target item
-    const filtered = prev.filter((_,item) => item && item.id !== index);
+    const filtered = prev.filter((_,item) => item !== index);
+    console.log(index)
 
     // Reassign sequential IDs for safe executions of loops
     const reindexed = filtered.map((item, newIndex) => ({
