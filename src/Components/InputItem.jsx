@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ModalWindow from './ModalWindow';
 import GenerateBtn from './GenerateBtn';
 import ItemHolder from './ItemHolder';
+import { Label } from '@/components/ui/label';
 
 
 
@@ -28,6 +29,7 @@ function InputItem() {
     //For Validation check
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [responseFlag, setresponseFlag] = useState(false);
+    const[budget,setBudget] = useState("")
 
 
     useEffect(() => {
@@ -78,7 +80,19 @@ function InputItem() {
 
   return (
     <>
-    <div className='lg:w-5/8 flex mx-auto mt-10 md:w-2/3'>
+    <div className='lg:w-5/8 mt-10 mx-auto md:w-2/3 '>
+ 
+        {/* Input Field */}
+        <input
+        id="inputitem"
+        type="text"
+        value={budget}
+        onChange={(e) => setBudget(e.target.value)}
+        placeholder="Enter your Budget"
+        className="block w-full pl-5 pr-4 border border-gray-300  text-gray-500  focus:text-black focus:outline-none py-3 text-xl"
+        />
+    </div>
+    <div className='lg:w-5/8 flex mx-auto mt-5 md:w-2/3'>
         {/* Input Item in the list */}
 
         {/* Input Field */}
@@ -93,7 +107,7 @@ function InputItem() {
                     handleSearch();
               }}}
         placeholder="Enter an Item"
-        className="block w-full pl-5 pr-4 py-2 border border-gray-300  text-gray-500  focus:text-black focus:outline-none text-3xl"
+        className="block w-full pl-5 pr-4 py-2 border border-gray-300  text-gray-500  focus:text-black focus:outline-none text-xl"
         />
         
         {/* Search Icon */}
