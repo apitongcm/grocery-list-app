@@ -12,8 +12,7 @@ function InputItem() {
 
   //temporary API for search
   const [miniDB_items, setMiniDBItems] = useState([]);  // start empty
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [found, setFound] = useState(null);
 
     //Input item manipulation
     const [query, setQuery] = useState("");
@@ -26,34 +25,32 @@ function InputItem() {
     const [responseFlag, setresponseFlag] = useState(false);
     const[budget,setBudget] = useState("")
 
+     useEffect(() => {
+    fetch("http://127.0.0.1:5000/api/products")
+      .then((res) => res.json())
+      .then((data) => setMiniDBItems(data))
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
+  useEffect(() => {
+    if (miniDB_items.length > 0 && query.trim() !== "") {
+      const found = miniDB_items.find((item) =>
+        item.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFound(found);
+    } else {
+      setFound(null);
+    }
+  }, [query, miniDB_items]);
 
     useEffect(() => {
 
-       fetch("http://127.0.0.1:5000/api/products")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json(); // parse JSON data
-      })
-      .then((data) => {
-        setMiniDBItems(data);  // store API result
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-        setError(error);
-        setLoading(false);
-      });
 
     if (responseFlag) {
       setIsDialogOpen(true);
     }
     }, [responseFlag]);   
 
-
-  if (loading) return <p>Loading products...</p>;
-  if (error) return <p>Error loading products: {error.message}</p>;
 
     //************************************************ */
     //Searching the item
@@ -65,18 +62,14 @@ function InputItem() {
       }
 
     
-  const match = miniDB_items.find((miniDB_item) =>
-      miniDB_item.name.toLowerCase().includes(query.toLowerCase())
-    );
-    
-    if (!match) {
+    if (!found) {
           //if Input not match with the elements inside the database
           alert("Item not found")
           setresponseFlag(false);
           setQuery(''); 
     } else {
           //if Input match
-          setFirstMatch(match) 
+          setFirstMatch(found) 
           setresponseFlag(true);
     }
     setQuery('');  // clear input field
