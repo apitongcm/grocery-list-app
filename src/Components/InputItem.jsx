@@ -4,21 +4,16 @@ import { useState, useEffect } from "react";
 import ModalWindow from './ModalWindow';
 import GenerateBtn from './GenerateBtn';
 import ItemHolder from './ItemHolder';
-import { Label } from '@/components/ui/label';
+
 
 
 
 function InputItem() {
 
   //temporary API for search
-    const [miniDB_items] = useState([
-    { id: 1, name: 'Starbucks Double Shot Mocha | 220ml', price: 89.50 },
-    { id: 2, name: 'Selecta Filled Milk Low Fat Save 30 | 1L 2pcs', price: 150.25 },
-    { id: 3, name: 'SM Bonus Fresh Eggs | 12pcs', price: 117.00 },
-    { id: 4, name: 'Lucky Me Instant Pancit Canton Chilimansi | 80g 6', price: 84.00 },
-    { id: 5, name: 'Del Monte Juice Pineapple Heart Smart | 1L', price: 130.50 },
-  ]);
-
+  const [miniDB_items, setMiniDBItems] = useState([]);  // start empty
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
     //Input item manipulation
     const [query, setQuery] = useState("");
@@ -33,10 +28,32 @@ function InputItem() {
 
 
     useEffect(() => {
+
+       fetch("http://127.0.0.1:5000/api/products")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // parse JSON data
+      })
+      .then((data) => {
+        setMiniDBItems(data);  // store API result
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        setError(error);
+        setLoading(false);
+      });
+
     if (responseFlag) {
       setIsDialogOpen(true);
     }
     }, [responseFlag]);   
+
+
+  if (loading) return <p>Loading products...</p>;
+  if (error) return <p>Error loading products: {error.message}</p>;
 
     //************************************************ */
     //Searching the item
