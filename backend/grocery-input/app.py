@@ -20,17 +20,7 @@ def init_db():
             price REAL NOT NULL
         )
     """)
-    # Seed data (optional)
-   # c.execute("SELECT COUNT(*) FROM products")
-   # if c.fetchone()[0] == 0:
-    #    c.executemany(
-     #       "INSERT INTO products (name, price) VALUES (?, ?)",
-       #     [
-      #          ("Apple", 0.99),
-        #        ("Banana", 0.79),
-         #       ("Orange", 1.25),
-          #  ]
-        #)
+
     conn.commit()
     conn.close()
 

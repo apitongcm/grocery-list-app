@@ -34,11 +34,11 @@ venv/
 .venv/
 env/
 __pycache__/
-flask/
-werkzeug/
-jinja2/
-bin/
-lib/
-lib64/
+**flask/
+**werkzeug/
+**jinja2/
+**bin/
+**lib/
+**lib64/
 
 
