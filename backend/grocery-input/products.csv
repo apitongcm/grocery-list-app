@@ -1,8 +1,191 @@
-﻿id,name,price
-1,Paradiso canned sardines in tomato sauce 155g,12.50
-2,Family canned sardines in tomato sauce 130g,12.60
-3,Hakone canned sardines in tomato sauce 155g,13.00
-4,Young's canned sardines in tomato sauce 155g,13.25
-5,Lucky 7 canned sardines in tomato sauce 155g,13.75
-6,Toyo canned sardines in tomato sauce 155g,13.2
-7,Hakata canned sardines in tomato sauce 155g,13.2
+﻿1,Family's Budget Pack Plain 130g,15.25
+2,Saba Phil. Sardines - NCR 155g,17.25
+3,Saba Phil. Sardines -  luzon/Viz/Min 155g,17.50
+4,Atami Regular Lid 155g,20.50
+5,Mikado Regular Lid 155g,20.50
+6,King Cup Regular Lid 155g,18.00
+7,Mariko Regular Lid 155g,19.8
+8,Sallenas Regular Lid  155g,18.5
+9,Atami EOC 155g,21.25
+10,Mikado EOC 155g,21.25
+11,Toyo Bunos Green Regular Lid 155g,18.699999999999999
+12,555 Bunos Pack 155g,19.649999999999999
+13,Lucky 7 155g,19.649999999999999
+14,Toyo Bonus Green EOC,19.5
+15,Jersy Sweetened Condesed Creamer 390g,44.5
+16,Liberty 168mL,34.75
+17,Cow Bell 300mL,41
+18,Liberty 300mL,53
+19,Angel Filled Milk 370mL,48
+20,Bear Brand 135g,50
+21,Birch Tree Full Cream Milk 150g,70.75
+22,AlaskaFortified Powdered Milk Drink 165g,44
+23,Jersey Fortified Instant Powdered Milk Drink 300g,96.25
+24,Blend 45 Pure Soluble - Supermarket 25g,20.25
+25,Great taste (Premium) SMKT 25g,21.600000000000001
+26,Great taste (Granules) SMKT 25g,22
+27,Great taste (Premium) SMKT 50g,42.200000000000003
+28,Great taste (Granules) SMKT 50g,43
+29,Cafe Puro 17g,4.7000000000000002
+30,Blend45 3-in-1 Original 18g,4.5
+31,San Mig Coffee 3-in-1 Original 20g,7
+32,Nescafe Original 26g,7.75
+33,Kopiko Black 30g,8.5
+34,Great Taste Original Twin Pack 33g,8.25
+35,Pinoy Pandesal (10pcs/pack) 250g ,27.25
+36,Pinoy Tasty 450g,44
+37,Payless (Instant Mami chicken and Instant Mami  Beef) 55g,7.5
+38,Quick Chow (Instant Mami chicken and Instant Mami  Beef) 55g,7.75
+39,"Ho-Mi (Instant Mami chicken,Garlic, and Instant Mami Beef Brisket) 55g",8.5
+40,Lucky Me! (Instant Mami chicken na chicken and Instant Mami Beef na Beef) 55g,8. 75
+41,Lasap Rock Salt 250g,7.5
+42,Fidel Coarse (Red) - Luzon 250g,11
+43,Fidel Coarse (Red) - Visayas and Mindanao 250g,11.75
+44,Lasap Rock Salt 500g,13.5
+45,Fidel Coarse (Red) - Luzon 500g,21.25
+46,Fidel Coarse (Red) - Visayas and Mindanao 500g,22.5
+47,Lasap Rock Salt 1kg,25
+48,Lasap Iodized Salt 100g,4.75
+49,Lasap Iodized Salt 250g,9.75
+50,Fidel Refined (Blue) - Luzon 250g,11.75
+51,Fidel Refined (Blue ) - Visayas and Mindanao 250g,12.25
+52,Fidel Free Flowing (Green) - Luzon 250g,12.75
+53,Fidel Free Flowing (Green) - Visayas and Mindanao 250g,13.5
+54,Lasap Iodized Salt 500g,17.25
+55,Fidel Refined (Blue) - Luzon 500g,23
+56,Fidel Refined (Blue ) - Visayas and Mindanao 500g,23.25
+57,Fidel Free Flowing (Green) - Luzon 500g,25
+58,Fidel Free Flowing (Green) - Visayas and Mindanao 500g,25.5
+59,Lasap Iodized Salt 1kg,31.5
+60,"Sulit Bar (Blue, White, Kalamansi Speckled Blue) - Visayas and Mindanao 330g",19.25
+61,"Bareta Bar (Blue, White, Kalamansi Speckled Blue) - Visayas and Mindanao 330g",19.75
+62,"Budget Bar (White Anti-Bac., Fabcon, Kalamsi, Power Blue, Speckled Blue) - Luzon 330g",21
+63,"Budget Bar (White Anti-Bac., Fabcon, Kalamsi, Power Blue, Speckled Blue) - Visayas and Mindanao 330g",21.25
+64,Speed Long Bar Blue 330g,21.5
+65,"Speed Long Bar (White, Speckled Blue, Kalamansi) 330g",22.5
+66,Surf with ActiveClean Technology Blue Bar 360g,21.75
+67,Surf with ActiveClean Technology Kalamansi Bar 360g,23
+68,Surf with ActiveClean Technology Tawas Bar 360g,23
+69,"Champion Bar (Supra Clean, Citrus Fresh) 370g",23
+70,"Bonux - Flower Fiesta, Kalamansi Zest 380g",21
+71,Tide Bar Original Scent 380g,24
+72,SM Bonus 325mL,6.5
+73,Wilkins 330mL,12
+74,Absolute 350mL,12
+75,SM Bonus 500mL ,8.5
+76,Absolute 500mL,16.25
+77,Wilkins 500mL,17
+78,Wilkins 1L,25
+79,Absolute 1L,25
+80,Absolute 6L,82
+81,SM Bonus 6.6L,54
+82,Wilkins 7L,88
+83,SM Bonus 300mL,5
+84,Magnolia Pure 355mL,8.5
+85,Refresh 500mL,6.75
+86,Natures Spring 500mL,10.5
+87,Magnolia Pure 500mL,10.5
+88,Wilkins Pure 500mL,11
+89,Natures Spring 1L,16.5
+90,Wilkins Pure 1L,18
+91,Magnolia Pure 1L,19.5
+92,Supersavers Nature's Pure 330mL,7.1500000000000004
+93,Hidden Spring 330mL,8.8000000000000007
+94,Viva - Nationwide 330mL,10
+95,Refresh 350mL,6
+96,Summit 350mL,10
+97,Refresh 500mL,8.25
+98,Supersavers Nature's Pure 500mL,8.6999999999999993
+99,Robinsons Mall 500mL,10.449999999999999
+100,Hidden Spring 500mL,12.1
+101,Viva- Nationwide 500mL,13
+102,Summit 500mL,12
+103,Viva - Nationwide 1L,19
+104,Summit 1L,19.5
+105,Summit 6L,75
+106,Export Vigil Candles White/Yellow (12 pcs/pack) #01,60.5
+107,Manila Wax Votive White/Yellow (6 pcs/pack) #01,82.760000000000005
+108,Manila Wax Sperma White/Yellow (10 pcs/pack) #02,54.109999999999999
+109,Manila Wax Votive White/Yellow (6 pcs/pack) #02,71.090000000000003
+110,Export Candles White (20 pcs/ pack) #03,39
+111,5 - Star Esperma White (20 pcs/pack) #03,54.25
+112,Manila Wax Votive White/Yellow (6 pcs/pack) #03,59.409999999999997
+113,Manila Wax Sperma White/Yellow (20 pcs/pack) #03,64.719999999999999
+114,Liwanag Esperma Candle White (20pcs/pack) #03,65.780000000000001
+115,Manila Wax Sperma White/Yellow (20 pcs/pack) #04,47.740000000000002
+116,Export Candles White (20 pcs/ pack) #05,60.5
+117,Liwanag Esperma Candle White (20pcs/pack) #05,88.049999999999997
+118,Export Candles White (20 pcs/ pack) #06,85
+119,5 - Star Esperma White (25 pcs/pack) #06,115.5
+120,Export Candles White (12 pcs/ pack) #08,60.5
+121,5 - Star Esperma White (5 pcs/pack) #08,150.25
+122,Export Candles White (10 pcs/pack) #10,72.75
+123,Export Candles White (10 pcs/pack) #12,72.75
+124,5 - Star Esperma White (4 pcs/pack) #14,36.25
+125,Manila Wax Sperma White/Yellow (4 pcs/pack) #14,54.100000000000001
+126,Export Candles White (8 pcs/pack) #14,72.75
+127,Export Candles White (4pcs/pack) #16,36.25
+128,Liwanag Esperma Candle White (4pcs/pack) #16,46.420000000000002
+129,Manila Wax Sperma White/Yellow (2 pcs/pack) #16,59.409999999999997
+130,Export Candles White (4 pcs/pack) #18,48.5
+131,Liwanag Esperma Candle White (4pcs/pack) #18,76.129999999999995
+132,Export Candles White (4 pcs/pack) #19,97
+133,Export Candles White (2 pcs/pack) #20x2,66.75
+134,Export Candles White (4 pcs/pack) #20x4,121.5
+135,5 - Star Esperma White (2 pcs/pack) #22,117.75
+136,Liwanag Esperma Candle White (2pcs/pack) #24,177.71000000000001
+137,Export Vigil Candles White/Yellow (4 pcs/pack) #2x4,54.5
+138,Export Vigil Candles White/Yellow (6 pcs/pack) #2x6,85
+139,Purefoods Chinese Style 165g,33.5
+140,CDO Chinese Style 165g,41
+141,Winner - Supermarket (SMKT) 150g,18
+142,555 150g,19.5
+143,CDO  150g,21.75
+144,Argentina 150g,23.75
+145,Argentina 170g,25.25
+146,Bingo 150g,23
+147,El Rancho - SMKT 150g,31.25
+148,Winner - SMKT 150g,33.75
+149,Star Corned Beef 150g,34
+150,Youngs Town Premium 150g,34.25
+151,Argentina 150g,35.75
+152,Argentina 170g,40.75
+153,Purefoods 150g,18.149999999999999
+154,Bingo 150g,19.5
+155,555 150g,19.5
+156,CDO 150g,21.75
+157,Argentina 150g,22
+158,El Rancho - SMKT 155g,19.5
+159,Argentina 170g,25
+160,Purefoods 200g,24.899999999999999
+161,Datu Puti - White Vinegar - SMKT 350ml,18
+162,Silver Swan Sukang Puti - SMKT 350ml,18
+163,Datu Puti - White Vinegar - WMKT 350ml,18.75
+164,Silver Swan Sukang Puti Doy Pack - SMKT 200ml,8.25
+165,Silver Swan Sukang Puti Doy Pack - WMKT 200ml,8.5
+166,Lorins PET Bottle 350ml,23.25
+167,Silver Swan Special 350ml,24.5
+168,Datu Puti - SMKT 350ml,27
+169,Datu Puti - WMKT 350ml,28.25
+170,Nelicom Special - SMKT 350ml,30.5
+171,Nelicom Special - WMKT 350ml,31.75
+172,Lorins - Pouch 150ml,11.5
+173,Lorins - Budget Pouch 350ml,21.25
+174,Datu Puti - SMKT 350ml,19.75
+175,Datu Puti - WMKT 350ml,20.5
+176,Silver Swan - SMKT 350ml,20.75
+177,Silver Swan Doy Pack - SMKT 200ml,11
+178,Silver Swan Doy Pack - WMKT 200ml,11.5
+179,Green Cross (Pure Care) 55g,15
+180,"Palmolive Naturals - Pinkish Glow (pink), Hydrating Glow (green), White with Natural Papaya, and White with Natural Milk 55g",17
+181,Safeguard Pure White 55g,22
+182,Green Cross (Pure Care) 85g,25.75
+183,Safeguard Pure White 82g,31.25
+184,Green Cross (Pure Care) 125g,37.25
+185,Safeguard Pure White 119g,49
+186,Eveready Heavy Duty Small Red - Pack of 2 AA,27
+187,Eveready Heavy Duty Red - Blister Pack of 4 AA,48
+188,Eveready Heavy Duty Small Black - Pack of 2 AA,39.950000000000003
+189,Energizer Max - Blister Pack of 4 AA,206.25
+190,Eveready Heavy Duty Red - Blister Pack of 2 D,51.25
+191,Eveready Heavy Duty Black - Blister Pack of 2 D,77.75

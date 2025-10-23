@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { useNavigate } from "react-router-dom";
 import React from 'react'
 
-function GenerateBtn({setSelectedItems, selectedItems}) {
+function GenerateBtn({setSelectedItems, selectedItems, budget, setBudget}) {
   
   const navigate = useNavigate();
 
@@ -15,8 +15,28 @@ function GenerateBtn({setSelectedItems, selectedItems}) {
     return;
   }
 
-  //temporary since API is not ready.
+ 
+  /* try {
+    const response = await fetch("http://localhost:5000/receive_data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ 
+        data: selectedItems,
+        budget: budget
+      }) // sending as JSON
+    });
+
+    const result = await response.json();
+     console.log("Response from Flask:", result);
+  } catch (error) {
+    console.error("Error posting data:", error);
+  }*/
+   //temporary since API is not ready.
   localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+  console.log(budget);
+  setBudget("");
 
   //Goes to Loading page while waiting for the calculated result.
    navigate("/loading");

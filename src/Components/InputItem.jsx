@@ -132,6 +132,8 @@ function InputItem() {
               <GenerateBtn
                   setSelectedItems={setSelectedItems}
                   selectedItems={selectedItems}
+                  budget={budget}
+                  setBudget={setBudget}
               />
                   
 
