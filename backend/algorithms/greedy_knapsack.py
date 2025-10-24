@@ -1,37 +1,27 @@
+import numpy as np
+
 # sample list =[id, priority, price]
 sample_list = [[1, 1, 10], [2, 2, 15], [3, 3, 30]]
+sample_len = len(sample_list)
+sample_budget = 50
+
+# create a new list with priority/price ratio
+pri_list = sample_list.copy() 
+
+for i in range(sample_len):
+  prio = sample_list[i][1]
+  price = sample_list[i][2]
+  pri_ratio = round(prio/price, 3)
+
+  pri_list[i].append(pri_ratio)
 
 # sort by priority/price ratio in descending order
+new_pri_list = np.array(pri_list)
+new_pri_list = new_pri_list[new_pri_list[:, 3].argsort(kind='mergesort')[::-1]]
 
-# merge sort implementation
-def merge(left, right):
-  result = []
-  i = j = 0
+final_list = new_pri_list.tolist() 
+for i in range(sample_len):
+  final_list[i].pop()
 
-  while i < len(left) and j < len(right):
-    if left[i] < right[j]:
-      result.append(left[i])
-      i += 1
-    else:
-      result.append(right[j])
-      j += 1
+print(final_list) 
 
-  result.extend(left[i:])
-  result.extend(right[j:])
-
-  return result
-
-def mergeSort(arr):
-  if len(arr) <= 1:
-    return arr
-
-  mid = len(arr) // 2
-  leftHalf = arr[:mid]
-  rightHalf = arr[mid:]
-
-  sortedLeft = mergeSort(leftHalf)
-  sortedRight = mergeSort(rightHalf)
-
-  return merge(sortedLeft, sortedRight)
-
-sorted_arr = mergeSort(arr_1)
