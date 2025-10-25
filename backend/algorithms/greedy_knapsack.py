@@ -1,13 +1,22 @@
 import numpy as np
 
 # sample list =[id, priority, price]
-sample_list = [[1, 1, 10], [2, 2, 15], [3, 3, 30]]
+sample_list = [[1, 1, 10], [2, 2, 15], [3, 3, 40], [4, 4, 60], [5, 5, 30], [6, 6, 75]]
 sample_len = len(sample_list)
 sample_budget = 50
 
-# create a new list with priority/price ratio
-pri_list = sample_list.copy() 
+pri_list = sample_list.copy()
 
+# remove items that are over budget and set their priority to 0
+overbudget = [] 
+for i in range(sample_len):
+  if pri_list[i][2] > sample_budget:
+    overbudget.append(pri_list[i])
+    pri_list[i][1] = 0 
+
+print("Over budget items:", overbudget)
+
+# create a new list with priority/price ratio
 for i in range(sample_len):
   prio = sample_list[i][1]
   price = sample_list[i][2]
