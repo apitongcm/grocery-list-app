@@ -13,11 +13,10 @@ export default function ResultPage() {
 
     document.title = "Balaklon-Grocery-List";
 
-    //Temporary Data
-    // Insert Knapsack Algorithm Results here
-    //Get Items to display in the page. 
+   
+    //Get Items to display in the page from the flask.
     const storedData = JSON.parse(localStorage.getItem("selectedItems")) || [];
-    //setItems(storedData);
+
 
     const withId = storedData.map((item, index) => ({
       ...item,

@@ -2,12 +2,12 @@ import { Button } from '@/components/ui/button'
 import { useNavigate } from "react-router-dom";
 import React from 'react'
 
-function GenerateBtn({setSelectedItems, selectedItems, budget, setBudget}) {
+function GenerateBtn({setSelectedItems, selectedItems, budget}) {
   
   const navigate = useNavigate();
 
   //Generate the optimized grocery list and display the list
-  const handleGenerateTextFile = () => {
+ const handleGenerateTextFile = async () => {
 
   //Safe guard that will catch error if the array is empty
   if (!selectedItems || selectedItems.length === 0) {
@@ -15,32 +15,34 @@ function GenerateBtn({setSelectedItems, selectedItems, budget, setBudget}) {
     return;
   }
 
- 
-  /* try {
-    const response = await fetch("http://localhost:5000/receive_data", {
+   try {
+    const response = await fetch("http://localhost:5000/api/receive_data", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         data: selectedItems,
-        budget: budget
-      }) // sending as JSON
+        budget: budget,
+      }),
     });
 
+
     const result = await response.json();
-     console.log("Response from Flask:", result);
+    // Debug: checking of response from flask
+    console.log("Response from Flask:", result);
+
+    //Access the shuffled_items
+    console.log("Shuffled Items:", result.shuffled_items);
+    localStorage.setItem("selectedItems", JSON.stringify(result.shuffled_items));
+
+
+    // navigate or display result
+    navigate("/loading");
   } catch (error) {
     console.error("Error posting data:", error);
-  }*/
-   //temporary since API is not ready.
-  localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
-  console.log(budget);
-  setBudget("");
-
-  //Goes to Loading page while waiting for the calculated result.
-   navigate("/loading");
   }
+};
 
 
   return (
