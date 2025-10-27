@@ -4,21 +4,15 @@ import { useState, useEffect } from "react";
 import ModalWindow from './ModalWindow';
 import GenerateBtn from './GenerateBtn';
 import ItemHolder from './ItemHolder';
-import { Label } from '@/components/ui/label';
+
 
 
 
 function InputItem() {
 
   //temporary API for search
-    const [miniDB_items] = useState([
-    { id: 1, name: 'Starbucks Double Shot Mocha | 220ml', price: 89.50 },
-    { id: 2, name: 'Selecta Filled Milk Low Fat Save 30 | 1L 2pcs', price: 150.25 },
-    { id: 3, name: 'SM Bonus Fresh Eggs | 12pcs', price: 117.00 },
-    { id: 4, name: 'Lucky Me Instant Pancit Canton Chilimansi | 80g 6', price: 84.00 },
-    { id: 5, name: 'Del Monte Juice Pineapple Heart Smart | 1L', price: 130.50 },
-  ]);
-
+  const [miniDB_items, setMiniDBItems] = useState([]);  // start empty
+  const [found, setFound] = useState(null);
 
     //Input item manipulation
     const [query, setQuery] = useState("");
@@ -31,12 +25,32 @@ function InputItem() {
     const [responseFlag, setresponseFlag] = useState(false);
     const[budget,setBudget] = useState("")
 
+     useEffect(() => {
+    fetch("http://127.0.0.1:5000/api/products")
+      .then((res) => res.json())
+      .then((data) => setMiniDBItems(data))
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
+  useEffect(() => {
+    if (miniDB_items.length > 0 && query.trim() !== "") {
+      const found = miniDB_items.find((item) =>
+        item.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFound(found);
+    } else {
+      setFound(null);
+    }
+  }, [query, miniDB_items]);
 
     useEffect(() => {
+
+
     if (responseFlag) {
       setIsDialogOpen(true);
     }
     }, [responseFlag]);   
+
 
     //************************************************ */
     //Searching the item
@@ -48,18 +62,14 @@ function InputItem() {
       }
 
     
-  const match = miniDB_items.find((miniDB_item) =>
-      miniDB_item.name.toLowerCase().includes(query.toLowerCase())
-    );
-    
-    if (!match) {
+    if (!found) {
           //if Input not match with the elements inside the database
           alert("Item not found")
           setresponseFlag(false);
           setQuery(''); 
     } else {
           //if Input match
-          setFirstMatch(match) 
+          setFirstMatch(found) 
           setresponseFlag(true);
     }
     setQuery('');  // clear input field
@@ -122,6 +132,8 @@ function InputItem() {
               <GenerateBtn
                   setSelectedItems={setSelectedItems}
                   selectedItems={selectedItems}
+                  budget={budget}
+                  setBudget={setBudget}
               />
                   
 

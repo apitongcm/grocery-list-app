@@ -13,6 +13,8 @@ export default function ResultPage() {
 
     document.title = "Balaklon-Grocery-List";
 
+    //Temporary Data
+    // Insert Knapsack Algorithm Results here
     //Get Items to display in the page. 
     const storedData = JSON.parse(localStorage.getItem("selectedItems")) || [];
     //setItems(storedData);
