@@ -7,7 +7,12 @@ sample_budget = 50
 
 def greed_sort(grocer_list, budget):
 
-  pri_list = grocer_list.copy()
+  if isinstance(grocer_list, dict):
+    pri_list = list(grocer_list.values())
+
+  if isinstance(grocer_list, list):
+    pri_list = grocer_list.copy()
+  
   pri_len = len(pri_list) 
   for i in range(pri_len):
     # assign initial priority based on original order so list [id, name, price, priority]
@@ -48,6 +53,6 @@ def greed_sort(grocer_list, budget):
 
   return final_list
 
-print("unsorted list:", sample_list) 
-print("sorted list:", greed_sort(sample_list, sample_budget))
+#print("unsorted list:", sample_list) 
+#print("sorted list:", greed_sort(sample_list, sample_budget))
 
