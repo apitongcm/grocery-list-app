@@ -1,7 +1,8 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from algorithms import knapsack
 import sqlite3
-import greedy_knapsack
+
 
 
 #temporary to test 
@@ -66,13 +67,11 @@ def receive_data():
         print("Items:", selected_items)
         print("Budget:", budget)
 
-        # Shuffle the items randomly
-        #random.shuffle(selected_items)
         #apply greedy knapsack algorithm
-        selected_items = greedy_knapsack.greed_sort(selected_items, float(budget))
+        selected_items = knapsack.greed_sort(selected_items, float(budget))
 
 
-        # Example: process data
+        # Calculations
         total_cost = sum(item.get("price", 0) for item in selected_items)
         remaining = float(budget) - total_cost
 
