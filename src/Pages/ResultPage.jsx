@@ -76,7 +76,7 @@ export default function ResultPage() {
         {items.map((item, index) => (
           <li
             key={item.id || index}
-            className="bg-gray-100 px-6 py-3 rounded-lg shadow-sm w-5/8 text-center flex gap-6 lg:w-5/8 mx-auto mt-2 md:w-2/3"
+            className="bg-gray-100 px-6 py-3 rounded-lg shadow-sm w-full text-center flex gap-6 lg:w-5/8 mx-auto mt-2 md:w-2/3"
           >
 
             
@@ -88,31 +88,33 @@ export default function ResultPage() {
                 className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               />
              </div>
+             <div className='sm:flex gap-5'>
                 <p
-                  className={`font-semibold text-gray-800 ${
+                  className={`font-semibold text-gray-800 text-left md:text-center ${
                     item.checked ? "line-through text-red-400" : ""
                   }`}
                 >
                   {item.name}
                 </p>
                 <p
-                  className={`text-gray-500 text-md ${
+                  className={`text-gray-500 text-md text-left md:text-center ${
                     item.checked ? "line-through text-red-500" : ""
                   }`}
                 >
                     ₱{item.price}
                 </p>
+              </div>
           </li>
         ))}
       </ul>
          <div className='mt-10'>
             <Button
                 onClick={handleDownload}
-                className="lg:w-5/8 flex py-8 mx-auto mt-2 md:w-2/3 bg-gray-200 text-black hover:bg-green-300"
+                className="lg:w-5/8 w-full flex py-8 mx-auto mt-2 md:w-2/3 bg-gray-200 text-black hover:bg-green-300"
             >Download</Button>
             <Button
                 onClick={returnHome}
-                className="lg:w-5/8 flex py-8 mx-auto mt-2 md:w-2/3 bg-green-900 text-white hover:bg-green-300 hover:text-black"
+                className="lg:w-5/8 w-full flex py-8 mx-auto mt-2 md:w-2/3 bg-green-900 text-white hover:bg-green-300 hover:text-black"
             >New List</Button>
          </div>
     </div>
