@@ -1,18 +1,14 @@
 from flask import Flask, jsonify, request
-from flask_cors import CORS
+#from flask_cors import CORS
 from algorithms import knapsack
 import sqlite3
 
 
 
-#temporary to test 
-import random
-
-
 app = Flask(__name__)
 
 # Allow all origins for development (you can restrict this later)
-CORS(app, resources={r"/*": {"origins": "*"}})
+#CORS(app, resources={r"/*": {"origins": "*"}})
 
 DATABASE = "products.db"
 
@@ -36,6 +32,9 @@ def init_db():
 # -----------------------------
 # API Routes
 # -----------------------------
+@app.route("/api", methods=["GET"])
+def home():
+    return jsonify({"message":"Flash backend on Vercel is working!"})
 
 # API for getting items from the products.db
 @app.route("/api/products", methods=["GET"])

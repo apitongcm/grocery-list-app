@@ -16,7 +16,8 @@ function GenerateBtn({setSelectedItems, selectedItems, budget}) {
   }
 
    try {
-    const response = await fetch("http://localhost:5000/api/receive_data", {
+    //fetch("http://localhost:5000/api/receive_data") local server
+    const response = await fetch("/api/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

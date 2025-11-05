@@ -6,7 +6,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
 node_modules
 dist
 dist-ssr
@@ -28,6 +27,9 @@ dist-ssr
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
 
 # Virtual environment
 venv/
