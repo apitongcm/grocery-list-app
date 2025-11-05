@@ -22,7 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
+*.code-workspace
 
 # Byte-compiled / cache files
 __pycache__/
@@ -41,5 +41,22 @@ __pycache__/
 **lib/
 **lib64/
 **pyvenv.cfg
+*.db
+*.sqlite3
+instance/
 
+# Data files
+*.csv
+*.json
+*.docx
 
+# Node / React
+node_modules/
+dist/
+build/
+*.log
+*.lock
+
+# OS
+.DS_Store
+Thumbs.db
