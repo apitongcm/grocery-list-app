@@ -75,6 +75,17 @@ function InputItem() {
     setQuery('');  // clear input field
     }
 
+    // Check if the input is numeric or empty (allow clearing)
+    const handleBudgetChange = (e) => {
+    const value = e.target.value;
+
+    if (value === "" || /^[0-9]*$/.test(value)) {
+      setBudget(value);
+    } else {
+      alert('Please enter numbers only.')
+    }
+  };
+
     //************************************************ */
     //Add item to basket
     const handleAddCard = () => {
@@ -88,6 +99,7 @@ function InputItem() {
     setresponseFlag(false) //Return flag to false
   };
 
+
   return (
     <>
     <div className='lg:w-5/8 mt-10 mx-auto md:w-2/3 '>
@@ -97,7 +109,7 @@ function InputItem() {
         id="inputitem"
         type="text"
         value={budget}
-        onChange={(e) => setBudget(e.target.value)}
+        onChange={handleBudgetChange}
         placeholder="Enter your Budget"
         className="block w-full pl-5 pr-4 border border-gray-300  text-gray-500  focus:text-black focus:outline-none py-3 text-xl"
         />
