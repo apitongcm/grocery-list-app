@@ -10,10 +10,10 @@ app = Flask(__name__)
 # -----------------------------
 # Supabase configuration
 # -----------------------------
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+NEXT_PUBLIC_SUPABASE_URL = os.getenv("SUPABASE_URL")
+NEXT_PUBLIC_SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+supabase: Client = create_client(NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_KEY)
 
 
 # -----------------------------

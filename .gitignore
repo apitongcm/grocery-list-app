@@ -50,7 +50,6 @@ instance/
 
 # Data files
 *.csv
-*.json
 *.docx
 
 # Node / React
