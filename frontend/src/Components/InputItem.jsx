@@ -26,7 +26,8 @@ function InputItem() {
     const[budget,setBudget] = useState("")
 
      useEffect(() => {
-    fetch("http://127.0.0.1:5000/api/products")
+    //http://127.0.0.1:5000/api/products
+    fetch("/api/products")
       .then((res) => res.json())
       .then((data) => setMiniDBItems(data))
       .catch((err) => console.error("Fetch error:", err));
