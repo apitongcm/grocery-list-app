@@ -46,6 +46,7 @@ __pycache__/
 *.db
 *.sqlite3
 instance/
+*.env
 
 # Data files
 *.csv
