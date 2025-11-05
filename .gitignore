@@ -40,7 +40,6 @@ __pycache__/
 **werkzeug/
 **jinja2/
 **bin/
-**lib/
 **lib64/
 **pyvenv.cfg
 *.db
