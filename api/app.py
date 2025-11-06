@@ -1,17 +1,22 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from algorithms import knapsack
 from supabase import create_client, Client
+from dotenv import load_dotenv
 import os
 
 
 
 app = Flask(__name__)
-
+CORS(app, resources={r"/*": {"origins": "*"}})
 # -----------------------------
 # Supabase configuration
 # -----------------------------
+load_dotenv()
+
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
@@ -30,6 +35,7 @@ def get_products():
         response = supabase.table("products").select("*").execute()
         products = response.data
         return jsonify(products)
+        #return jsonify("message: This path is working!") 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -76,4 +82,4 @@ def receive_data():
     
 
 #if __name__ == "__main__":
- #   app.run(debug=True)
+#    app.run(debug=True)
