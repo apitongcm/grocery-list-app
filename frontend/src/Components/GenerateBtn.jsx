@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { useNavigate } from "react-router-dom";
 import React from 'react'
 
-function GenerateBtn({setSelectedItems, selectedItems, budget}) {
+function GenerateBtn({setSelectedItems, selectedItems, setBudget, budget}) {
   
   const navigate = useNavigate();
 
@@ -67,7 +67,8 @@ function GenerateBtn({setSelectedItems, selectedItems, budget}) {
     {/*Clear Grocery List */}
     <Button
     onClick={()=>{
-     setSelectedItems([])
+     setSelectedItems([]),
+     setBudget([])
     }}
     id ="clearbtn"
     className="w-full py-8 bg-green-900 text-white font-semibold text-xl hover:bg-green-300 hover:text-black md:text-2xl">
