@@ -67,8 +67,7 @@ function GenerateBtn({setSelectedItems, selectedItems, budget}) {
     {/*Clear Grocery List */}
     <Button
     onClick={()=>{
-     setSelectedItems([]),
-     window.location.reload();
+     setSelectedItems([])
     }}
     id ="clearbtn"
     className="w-full py-8 bg-green-900 text-white font-semibold text-xl hover:bg-green-300 hover:text-black md:text-2xl">
