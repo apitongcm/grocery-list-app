@@ -5,6 +5,7 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
 
+print("✅ Flask app loaded successfully on Vercel import")
 
 
 app = Flask(__name__)
