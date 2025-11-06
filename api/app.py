@@ -25,8 +25,8 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 # API Routes
 # -----------------------------
 @app.route("/api", methods=["GET"])
-def home():
-    return jsonify({"message":"Flash backend with Supabase on Vercel is working!"})
+def index():
+    return jsonify({"message":"Backend working on Vercel!"})
 
 # API for getting items from the products.db
 @app.route("/api/products", methods=["GET"])
