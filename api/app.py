@@ -26,7 +26,10 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 # -----------------------------
 @app.route("/api", methods=["GET"])
 def index():
-    return jsonify({"message":"Backend working on Vercel!"})
+    try:
+        return jsonify({"message":"Backend working on Vercel!"})
+    except Exception as e:
+        return jsonify({"error":str(e)}),500
 
 # API for getting items from the products.db
 @app.route("/api/products", methods=["GET"])
