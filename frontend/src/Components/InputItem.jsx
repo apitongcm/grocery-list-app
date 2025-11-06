@@ -26,8 +26,12 @@ function InputItem() {
     const[budget,setBudget] = useState("")
 
      useEffect(() => {
+    
+    // Get API base URL from environment variable
+    const apiUrl = import.meta.env.VITE_API_URL;
+    
     //http://127.0.0.1:5000/api/products
-    fetch("/api/products")
+    fetch(`${apiUrl}/api/products`)
       .then((res) => res.json())
       .then((data) => setMiniDBItems(data))
       .catch((err) => console.error("Fetch error:", err));

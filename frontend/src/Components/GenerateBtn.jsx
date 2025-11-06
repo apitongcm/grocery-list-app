@@ -16,8 +16,11 @@ function GenerateBtn({setSelectedItems, selectedItems, budget}) {
   }
 
    try {
+
+    // Get API base URL from environment variable
+    const apiUrl = import.meta.env.VITE_API_URL;
     //fetch("http://localhost:5000/api/receive_data") local server
-    const response = await fetch("/api/products", {
+    const response = await fetch(`${apiUrl}/api/receive_data`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
