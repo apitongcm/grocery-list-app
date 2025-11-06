@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from algorithms import knapsack
+from . import knapsack
 from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
