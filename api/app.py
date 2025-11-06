@@ -30,7 +30,8 @@ def index():
     try:
         return jsonify({"message":"Backend working on Vercel!"})
     except Exception as e:
-        return jsonify({"error":str(e)}),500
+        #return jsonify({"error":str(e)}),500
+        return jsonify({"message":"supabase not working!"})
 
 # API for getting items from the products.db
 @app.route("/api/products", methods=["GET"])
@@ -42,7 +43,6 @@ def get_products():
         #return jsonify("message: This path is working!") 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 # API for fetching selecteditems from the React frontend app
 @app.route('/api/receive_data', methods=['POST', 'OPTIONS'])
@@ -85,5 +85,5 @@ def receive_data():
         return jsonify({"error": str(e)}), 400
     
 
-#if __name__ == "__main__":
-#    app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
