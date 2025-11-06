@@ -10,10 +10,10 @@ app = Flask(__name__)
 # -----------------------------
 # Supabase configuration
 # -----------------------------
-NEXT_PUBLIC_SUPABASE_URL = os.getenv("SUPABASE_URL")
-NEXT_PUBLIC_SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-supabase: Client = create_client(NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_KEY)
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
 # -----------------------------
@@ -75,5 +75,5 @@ def receive_data():
         return jsonify({"error": str(e)}), 400
     
 
-if __name__ == "__main__":
-    app.run(debug=True)
+#if __name__ == "__main__":
+ #   app.run(debug=True)
