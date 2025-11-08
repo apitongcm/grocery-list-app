@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card"
 import React from 'react'
 
-function ItemCard({index,handleDrop,draggedIndexRef,handleDeleteCard,item}) {
+function ItemCard({index,handleDrop,draggedIndexRef,handleDeleteCard,item, handleTouchDrop}) {
 
       const handleDragStart = (index) => {draggedIndexRef.current = index;};
       const handleDragOver = (e) => e.preventDefault(); // preventing reseting data to default, to maintain data from drag start.
@@ -22,6 +22,7 @@ function ItemCard({index,handleDrop,draggedIndexRef,handleDeleteCard,item}) {
         onDragStart={() => handleDragStart(index)}
         onDragOver={handleDragOver}
         onDrop={() => handleDrop(index)}
+        onTouchMove={() =>handleTouchDrop(index)}
         >
             <CardHeader>
                 <CardTitle className="text-xl md:text-md">{item.name}</CardTitle>
