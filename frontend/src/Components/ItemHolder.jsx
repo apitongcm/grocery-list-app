@@ -62,18 +62,18 @@ function ItemHolder({selectedItems, setSelectedItems}) {
 
 //********************************************************/
 // Change order/priority by drag and drop functionality (Mobile View)
-const handleTouchDrop = (dropIndex) => {
-  dropIndex.preventDefault(); // prevent scroll during drag
+const handleTouchDrop = (e) => {
+  e.preventDefault(); // prevent scroll during drag
 
   const draggedIndex = draggedIndexRef.current;
   if (draggedIndex === null || draggedIndex < 0) return;
 
-  const touch = dropIndex.touches[0];
+  const touch = e.touches[0];
   const target = document.elementFromPoint(touch.clientX, touch.clientY);
   if (!target || !target.dataset || target.dataset.index === undefined) return;
 
-  //const dropIndex = parseInt(target.dataset.index);
-  //if (isNaN(dropIndex)) return;
+  const dropIndex = parseInt(target.dataset.index);
+  if (isNaN(dropIndex)) return;
 
   const updated = [...selectedItems];
 
