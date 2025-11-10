@@ -17,7 +17,7 @@ function ItemCard({index,handleDrop,draggedIndexRef,handleDeleteCard,item, handl
 
   return (
     
-        <Card className="mt-5 cursor-grab active:cursor-grabbing hover:shadow-lg transition"
+        <Card className="mt-5 cursor-grab active:cursor-grabbing hover:shadow-lg transition touch-pan-x select-none"
         draggable
         onDragStart={() => handleDragStart(index)}
         onDragOver={handleDragOver}
