@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import ImageViewer from "./ImageViewer"
 
 
 function Intro() {
@@ -38,8 +39,10 @@ function Intro() {
                             </li>
                             <li>The first item added will be the highest rank based on priority.</li>
                             <li>When finished, press "Generate" to run the knapsack algorithm and get an optimized grocery list.</li>
+                            <li>for the product list kindly refer to the image or visit <a href="https://dtiwebfiles.s3.ap-southeast-1.amazonaws.com/e-Presyo/SRP+Basic+Necessities+and+Prime+Commodities/2025/BNPC+SRP+BULLETIN+01+FEBRUARY+2025.002.pdf" target="_blank" className="text-red-800">DTI Price Bulletin</a></li>
                         </ul>
                    </div>
+                   <ImageViewer/>
             </AccordionContent>
         </AccordionItem>
         </Accordion>
