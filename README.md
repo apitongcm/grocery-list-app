@@ -16,6 +16,19 @@ In this project, the algorithm is used to generate an optimized grocery list bas
  - Responsive Design: Works seamlessly on desktop and mobile devices.
  - Fast Performance: Powered by Vite for quick development and builds.
 
+# Charts
+
+## Flowchart
+<img width="1270" height="936" alt="Flowchart" src="https://github.com/user-attachments/assets/d41ec5d8-a089-45ed-8a10-fa953ac83ca0" />
+
+## Sequence Diagram
+<img width="1270" height="936" alt="Sequence diagram" src="https://github.com/user-attachments/assets/d2e742ff-fce2-41f1-bcfb-256e9db98c9c" />
+
+## System Architecture
+<img width="1270" height="936" alt="System Architecture" src="https://github.com/user-attachments/assets/31bdce51-b238-41ef-afc5-7de5978f2768" />
+
+
+
 ## Screenshots
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/86445f57-0e11-4667-99a2-c01d0d9dccd7" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/02aeb786-2228-48fb-83a0-825cf78591f7" />
