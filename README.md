@@ -1,4 +1,4 @@
-# Grocery List App
+# Grocery List Web App with Knapsack-Based Budget Optimization
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fc540ec9-71f6-4226-8304-425b0807d8e6" />
 
 A simple, user-friendly web application for creating and managing grocery lists. Built with React and Vite, this app allows users to add, edit, delete, and check off items on their shopping lists, making grocery shopping more organized and efficient.
